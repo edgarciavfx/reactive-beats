@@ -1,7 +1,11 @@
+import Track from "../Track/Track";
+
 function TrackList({ tracksArray, handleClick }) {
   return (
     <>
-      <span>TrackList - {tracksArray}</span>
+      {tracksArray.map((track) => (
+        <Track key={track.id} {...track} handleClick={handleClick}/>
+      ))}
     </>
   );
 }

@@ -1,5 +1,4 @@
 export const mockTracks = [
-  // Rock / Metal
   { id: 1, name: "The End", artist: "Black Sabbath", album: "The End" },
   { id: 2, name: "Paranoid", artist: "Black Sabbath", album: "Paranoid" },
   {
@@ -28,10 +27,20 @@ export const mockTracks = [
     artist: "Slipknot",
     album: "Vol. 3: The Subliminal Verses",
   },
-  { id: 9, name: "Psychosocial", artist: "Slipknot", album: "All Hope Is Gone" },
+  {
+    id: 9,
+    name: "Psychosocial",
+    artist: "Slipknot",
+    album: "All Hope Is Gone",
+  },
   { id: 10, name: "One", artist: "Metallica", album: "...And Justice for All" },
   { id: 11, name: "Enter Sandman", artist: "Metallica", album: "Metallica" },
-  { id: 12, name: "Nothing Else Matters", artist: "Metallica", album: "Metallica" },
+  {
+    id: 12,
+    name: "Nothing Else Matters",
+    artist: "Metallica",
+    album: "Metallica",
+  },
   {
     id: 13,
     name: "The Final Countdown",
@@ -40,8 +49,6 @@ export const mockTracks = [
   },
   { id: 14, name: "Resistencia", artist: "Carajo", album: "Inmundo" },
   { id: 15, name: "El Final", artist: "Carajo", album: "Atrapasueños" },
-
-  // Hip-Hop (EN)
   { id: 16, name: "God's Plan", artist: "Drake", album: "Scorpion" },
   { id: 17, name: "Sicko Mode", artist: "Travis Scott", album: "Astroworld" },
   { id: 18, name: "HUMBLE.", artist: "Kendrick Lamar", album: "DAMN." },
@@ -60,24 +67,35 @@ export const mockTracks = [
     artist: "Eminem",
     album: "The Marshall Mathers LP",
   },
-
-  // Rap en español
   { id: 24, name: "Somos Sur", artist: "Ana Tijoux", album: "Vengo" },
   { id: 25, name: "Vengo", artist: "Ana Tijoux", album: "Vengo" },
   { id: 26, name: "Muerte", artist: "Canserbero", album: "Muerte" },
   { id: 27, name: "Es Épico", artist: "Canserbero", album: "Vida" },
   { id: 28, name: "Jeremías 17-5", artist: "Canserbero", album: "Muerte" },
   { id: 29, name: "C'est La Mort", artist: "Porta", album: "Equilibrio" },
-  { id: 30, name: "Dragon Ball Rap", artist: "Porta", album: "En Boca de Tantos" },
+  {
+    id: 30,
+    name: "Dragon Ball Rap",
+    artist: "Porta",
+    album: "En Boca de Tantos",
+  },
   { id: 31, name: "Resistencia", artist: "Santa RM", album: "Eterno" },
   { id: 32, name: "Oscuro", artist: "Santa RM", album: "Volumen 1" },
-
-  // Reggaetón
   { id: 33, name: "Gasolina", artist: "Daddy Yankee", album: "Barrio Fino" },
   { id: 34, name: "Dura", artist: "Daddy Yankee", album: "El Disco Duro" },
   { id: 35, name: "La Canción", artist: "Bad Bunny", album: "Oasis" },
-  { id: 36, name: "Tití Me Preguntó", artist: "Bad Bunny", album: "Un Verano Sin Ti" },
-  { id: 37, name: "Dakiti", artist: "Bad Bunny", album: "El Último Tour Del Mundo" },
+  {
+    id: 36,
+    name: "Tití Me Preguntó",
+    artist: "Bad Bunny",
+    album: "Un Verano Sin Ti",
+  },
+  {
+    id: 37,
+    name: "Dakiti",
+    artist: "Bad Bunny",
+    album: "El Último Tour Del Mundo",
+  },
   { id: 38, name: "Amorfoda", artist: "Bad Bunny", album: "X 100PRE" },
   { id: 39, name: "Baila Baila Baila", artist: "Ozuna", album: "Nibiru" },
   { id: 40, name: "Caramelo", artist: "Ozuna", album: "ENOC" },
@@ -91,7 +109,17 @@ export const mockTracks = [
   { id: 46, name: "Volumen 1", artist: "Porta", album: "Volumen 1" },
   { id: 47, name: "Volumen 1", artist: "Santa RM", album: "Volumen 1" },
   { id: 48, name: "La Canción", artist: "J Balvin", album: "Oasis" },
-  { id: 49, name: "Baila Baila Baila", artist: "Daddy Yankee", album: "Legendaddy" },
-  { id: 50, name: "Muerte", artist: "Porta", album: "No Es Cuestión de Edades" },
+  {
+    id: 49,
+    name: "Baila Baila Baila",
+    artist: "Daddy Yankee",
+    album: "Legendaddy",
+  },
+  {
+    id: 50,
+    name: "Muerte",
+    artist: "Porta",
+    album: "No Es Cuestión de Edades",
+  },
   { id: 51, name: "Tití Me Preguntó", artist: "Feid", album: "Inter Shibuya" },
 ];
