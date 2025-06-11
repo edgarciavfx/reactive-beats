@@ -1,14 +1,12 @@
 import { useState } from "react";
 import TrackList from "../TrackList/TrackList";
-import InputBar from "../InputBar/InputBar";
 import { mockTracks } from "../../mockTracks";
-import ButtonAPI from "../ButtonAPI/ButtonAPI";
 
 function Manager() {
+  const [query, setQuery] = useState(""); // for searchbar
+  const [playlistName, setPlaylistName] = useState(""); // for playlistbar
   const [search, setSearch] = useState(""); // for search button
-  const [searchbar, setSearchbar] = useState(""); // for search bar
   const [playlist, setPlaylist] = useState([]); // playlist tracks array
-  const [playlistName, setPlaylistName] = useState(""); // for playlist bar
 
   const resultsArray = mockTracks
     .filter((track) => {
@@ -18,7 +16,7 @@ function Manager() {
     })
     .filter(({ id }) => !playlist.some((t) => t.id === id));
 
-  const handleClick = (newTrack) => {
+  const handleTrackClick = (newTrack) => {
     setPlaylist((prevPlaylist) => {
       // Check if newTrack is already in the playlist (by id)
       const exists = prevPlaylist.some((track) => track.id === newTrack.id);
@@ -32,37 +30,40 @@ function Manager() {
     });
   };
 
+  const handleSearchChange = ({ target }) => setQuery(target.value);
+
+  const handleRename = ({ target }) => setPlaylistName(target.value);
+
+  const handleSearchClick = () => setSearch(query);
+
+  const handleSaveClick = () => {
+    const uris = playlist.map(track => track.uri);
+    console.log(uris);
+  };
+
   return (
     <>
       <div className="manager-container">
         <div className="top-container">
           <div className="searchbar">
-            <InputBar
-              setInput={setSearchbar}
-              clear={false}
-              placeholder={"Search..."}
-            />
+            <input type="text" value={query} onChange={handleSearchChange} />
           </div>
           <div className="buttons">
-            <ButtonAPI
-              name={"Search"}
-              handleClick={() => setSearch(searchbar)}
-            />
-            <ButtonAPI name={"Save to Spotify"} />
+            <button onClick={handleSearchClick}>Search</button>
+            <button onClick={handleSaveClick}>Save to Spotify</button>
           </div>
         </div>
         <div className="bottom-container">
           <div className="left-container">
             <h2>Search Results</h2>
-            <TrackList tracksArray={resultsArray} handleClick={handleClick} />
+            <TrackList
+              tracksArray={resultsArray}
+              handleClick={handleTrackClick}
+            />
           </div>
           <div className="right-container">
-            <InputBar
-              setInput={setPlaylistName}
-              clear={true}
-              placeholder={playlistName || "Playlist name..."}
-            />
-            <TrackList tracksArray={playlist} handleClick={handleClick} />
+            <input type="text" value={playlistName} onChange={handleRename} />
+            <TrackList tracksArray={playlist} handleClick={handleTrackClick} />
           </div>
         </div>
       </div>

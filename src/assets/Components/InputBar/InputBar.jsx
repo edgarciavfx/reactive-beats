@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 function InputBar({ setInput, placeholder, clear }) {
-  const [query, setQuery] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
