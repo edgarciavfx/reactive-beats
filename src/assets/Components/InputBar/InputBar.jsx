@@ -1,13 +1,12 @@
 import { useState } from "react";
-import SearchButton from "../SearchButton/SearchButton";
 
-function InputBar({ setInput, btnName, placeholder }) {
+function InputBar({ setInput, placeholder, clear }) {
   const [query, setQuery] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setInput(query);
-    setQuery("");
+    clear && setQuery("");
   };
 
   const handleChange = ({ target }) => setQuery(target.value);
@@ -24,7 +23,6 @@ function InputBar({ setInput, btnName, placeholder }) {
           value={query}
           onChange={handleChange}
         />
-        <SearchButton name={btnName} />
       </form>
     </>
   );

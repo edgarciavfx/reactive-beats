@@ -2,9 +2,11 @@ import { useState } from "react";
 import TrackList from "../TrackList/TrackList";
 import InputBar from "../InputBar/InputBar";
 import { mockTracks } from "../../mockTracks";
+import ButtonAPI from "../ButtonAPI/ButtonAPI";
 
 function Manager() {
-  const [search, setSearch] = useState(""); // for search bar
+  const [search, setSearch] = useState(""); // for search button
+  const [searchbar, setSearchbar] = useState(""); // for search bar
   const [playlist, setPlaylist] = useState([]); // playlist tracks array
   const [playlistName, setPlaylistName] = useState(""); // for playlist bar
 
@@ -32,33 +34,35 @@ function Manager() {
 
   return (
     <>
-      <div className="main-container">
-        <div className="searchBar-container">
-          <InputBar
-            btnName={"Search"}
-            setInput={setSearch}
-            placeholder={"Search..."}
-          />
+      <div className="manager-container">
+        <div className="top-container">
+          <div className="searchbar">
+            <InputBar
+              setInput={setSearchbar}
+              clear={false}
+              placeholder={"Search..."}
+            />
+          </div>
+          <div className="buttons">
+            <ButtonAPI
+              name={"Search"}
+              handleClick={() => setSearch(searchbar)}
+            />
+            <ButtonAPI name={"Save to Spotify"} />
+          </div>
         </div>
-        <br />
-        <div className="two-column">
-          <div className="lft-column">
-            <span>"Search Results"</span>
-            <br />{" "}
+        <div className="bottom-container">
+          <div className="left-container">
+            <h2>Search Results</h2>
             <TrackList tracksArray={resultsArray} handleClick={handleClick} />
           </div>
-          <br />
-          <div className="rgt-column">
-            <div className="playlistBar-container">
-              <InputBar
-                btnName={"Save"}
-                setInput={setPlaylistName}
-                placeholder={playlistName || "Playlist name..."}
-              />
-            </div>
-            <div className="playlist-container">
-              <TrackList tracksArray={playlist} handleClick={handleClick} />
-            </div>
+          <div className="right-container">
+            <InputBar
+              setInput={setPlaylistName}
+              clear={true}
+              placeholder={playlistName || "Playlist name..."}
+            />
+            <TrackList tracksArray={playlist} handleClick={handleClick} />
           </div>
         </div>
       </div>
